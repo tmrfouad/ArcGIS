@@ -5,9 +5,7 @@
       name="viewport"
       content="initial-scale=1, maximum-scale=1, user-scalable=no"
     />
-    <title>ArcGIS API for JavaScript Hello World App</title>
-
-    <link rel="stylesheet" href="main.css" />
+    <title>ArcGIS API for JavaScript App</title>
 
     <!--ArcGIS styles-->
     <link
@@ -18,41 +16,72 @@
     <!--Kendo styles-->
     <link
       rel="stylesheet"
-      href="kendoui.for.jquery.2019.2.619.trial/styles/kendo.common.min.css"
+      href="http://kendo.cdn.telerik.com/2019.2.619/styles/kendo.common.min.css"
     />
     <link
       rel="stylesheet"
-      href="kendoui.for.jquery.2019.2.619.trial/styles/kendo.default.min.css"
+      href="http://kendo.cdn.telerik.com/2019.2.619/styles/kendo.default.min.css"
     />
     <link
       rel="stylesheet"
-      href="kendoui.for.jquery.2019.2.619.trial/styles/kendo.default.mobile.min.css"
+      href="http://kendo.cdn.telerik.com/2019.2.619/styles/kendo.default.mobile.min.css"
     />
 
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!--app styles-->
+    <link rel="stylesheet" href="main.css" />
+
+
     <!--Kendo scripts-->
-    <script src="kendoui.for.jquery.2019.2.619.trial/js/jquery.min.js"></script>
-    <script src="kendoui.for.jquery.2019.2.619.trial/js/kendo.all.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2019.2.619/js/jquery.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2019.2.619/js/kendo.all.min.js"></script>
+
+    <!--bootstrap-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <!--ArcGIS scripts-->
     <script src="https://js.arcgis.com/4.12/"></script>
   </head>
   <body>
     <table style="height: 500px; width: 100%">
+      <tr style="height: 60px">
+        <td>
+          <!--search textbox-->
+          <div class="form-group"></div>
+          <input type="text" id="txtSearch" class="form-control" placeholder="Search">
+        </td>
+        <td rowspan="2">
+            <!--Kendo chart placeholder-->
+            <div id="chart-container" style="display: none">
+              <div class="k-content wide">
+                <div id="chart"></div>
+              </div>
+            </div>
+          </td>
+      </tr>
       <tr>
         <td style="width: 60%">
           <!--ArcGIS placeholder-->
           <div id="viewDiv"></div>
         </td>
-        <td>
-          <!--Kendo chart placeholder-->
-          <div id="example">
-            <div class="demo-section k-content wide">
-              <div id="chart"></div>
-            </div>
-          </div>
-        </td>
+      </tr>
+    </table>
+    <!--result grid-->
+    <table id="tblResults" class="table table-striped" style="display: none">
+      <tr>
+        <th>Object ID</th>
+        <th>Area Name</th>
+        <th>Class</th>
+        <th>ST.</th>
+        <th>Capital</th>
+        <th>POP2000</th>
+        <th>Point</th>
       </tr>
     </table>
 
+    <!--app script-->
     <script src="main.js"></script>
   </body>
 </html>
